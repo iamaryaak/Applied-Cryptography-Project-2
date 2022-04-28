@@ -8,7 +8,80 @@
 </head>
 <body>
     <h1>
-        Answer these questions to choose the correct Block Cipher
+        <!--Create form and save answers to CSV file-->
+        Answer these questions to choose the correct Block Cipher!
+        <form name="xyz_form">
+            <section class="border-bottom">
+                <div class="content">
+                <h3>Choose Security Level</h3>
+                    <div class="form-control-group">
+                        <div class="form-control form-control-number">
+                            <input type="number" id="id_number">
+                        </div>
+                    </div>
+                    <h3>First Name</h3>
+                    <div class="form-control-group">
+                        <div class="form-control form-control-text">
+                            <input type="text" id="first_name">
+                        </div>
+                    </div>
+                </div><!--.content-->
+                <section class="data-capture-buttons one-buttons">
+                <div class="content">
+                    <input type="submit" value="Submit" onClick="javascript:addToCSVFile()">
+                </div>
+            </section><!--.data-capture-buttons-->
+
+        <!--code for decision tree-->
+        <script>
+            var fs = require('fs');
+            var csv = require('csv');
+            var C45 = require('c4.5');
+
+            fs.readFile('data.csv', function(err, data) {
+            if (err) {
+                console.error(err);
+                return false;
+            }
+
+            csv.parse(data, function(err, data) {
+                if (err) {
+                console.error(err);
+                return false;
+                }
+
+                var headers = data[0];
+                var features = headers.slice(1,-1); // ["attr1", "attr2", "attr3"]
+                var featureTypes = ['category','number','category'];
+                var trainingData = data.slice(1).map(function(d) {
+                return d.slice(1);
+                });
+                var target = headers[headers.length-1]; // "class"
+                var c45 = C45();
+
+                c45.train({
+                    data: trainingData,
+                    target: target,
+                    features: features,
+                    featureTypes: featureTypes
+                }, function(error, model) {
+                if (error) {
+                    console.error(error);
+                    return false;
+                }
+
+                var testData = [
+                    ['B',71,'False'],
+                    ['C',70,'True'],
+                ];
+
+                console.log(model.classify(testData[0]) === 'CLASS1'); // true
+                console.log(model.classify(testData[1]) === 'CLASS2'); // true
+                });
+            });
+            });
+
+        </script>
     </h1>
 </body>
 </html>
