@@ -11,20 +11,51 @@
         <!--Create form and save answers to CSV file-->
         Answer these questions to choose the correct Block Cipher!
         <br>
-        How lightweight is your Product: <select id="q1">
+        How lightweight is your Product?
+        <select id="q1">
             <option value="light">Light</option>
             <option value="medium-heavy">Medium-Heavy</option>
-        </select><br />
-        <span id="q2">Security Question 2: <input type="text" /></span><!--.data-capture-buttons-->
+        </select>
+        <br />
+        <!--question 2-->
+        How much personal information does your product store?
+        <select id="q2">
+            <option value="none">Personal Use (breakable)</option>
+            <option value="med">Corporate Use</option>
+            <option value="max">Maximum Security</option>
+        </select><!--.data-capture-buttons-->
+        <br>
+         <!--question 3-->
+         How important is speed to you?
+         <select id="q3">
+            <option value="very">Very</option>
+            <option value="none">Not important</option>
+        </select>
 
         <!--Script for adaptive questions-->
         <script>
+            // questino 1
             document.getElementById("q1").onchange = function () {
             if (document.getElementById("q1").options[document.getElementById("q1").selectedIndex].value == "light")
+                // SIMON and Blowfish
                 document.getElementById("q2").style.display = "none";
             else
+                // AES, DES, Triple DES
                 document.getElementById("q2").style.display = "block";
-        }
+            }
+
+            // question 2
+            document.getElementById("q2").onchange = function () {
+            if (document.getElementById("q2").options[document.getElementById("q2").selectedIndex].value == "none")
+                // SIMON and Blowfish
+                document.getElementById("q3").style.display = "none";
+            if (document.getElementById("q2").options[document.getElementById("q2").selectedIndex].value == "med")
+                // 3DES and AES
+                document.getElementById("q3").style.display = "block";
+            else
+                document.getElementById("q3").style.display = "block";
+            }
+
         </script>
 
         <!--code for decision tree-->
