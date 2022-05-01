@@ -11,19 +11,19 @@
         <!--Create form and save answers to CSV file-->
         Answer these questions to choose the correct Block Cipher!
         <br>
-        Services: <select id="service">
-            <option value="stuff">stuff</option>
-            <option value="webdesign">webdesign</option>
+        How lightweight is your Product: <select id="q1">
+            <option value="light">Light</option>
+            <option value="medium-heavy">Medium-Heavy</option>
         </select><br />
-        <span id="webname">Website: <input type="text" /></span><!--.data-capture-buttons-->
+        <span id="q2">Security Question 2: <input type="text" /></span><!--.data-capture-buttons-->
 
         <!--Script for adaptive questions-->
         <script>
-            document.getElementById("service").onchange = function () {
-            if (document.getElementById("service").options[document.getElementById("service").selectedIndex].value == "webdesign")
-                document.getElementById("webname").style.display = "none";
+            document.getElementById("q1").onchange = function () {
+            if (document.getElementById("q1").options[document.getElementById("q1").selectedIndex].value == "light")
+                document.getElementById("q2").style.display = "none";
             else
-                document.getElementById("webname").style.display = "block";
+                document.getElementById("q2").style.display = "block";
         }
         </script>
 
