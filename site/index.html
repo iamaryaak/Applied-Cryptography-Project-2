@@ -10,27 +10,22 @@
     <h1>
         <!--Create form and save answers to CSV file-->
         Answer these questions to choose the correct Block Cipher!
-        <form name="xyz_form">
-            <section class="border-bottom">
-                <div class="content">
-                <h3>Choose Security Level</h3>
-                    <div class="form-control-group">
-                        <div class="form-control form-control-number">
-                            <input type="number" id="id_number">
-                        </div>
-                    </div>
-                    <h3>First Name</h3>
-                    <div class="form-control-group">
-                        <div class="form-control form-control-text">
-                            <input type="text" id="first_name">
-                        </div>
-                    </div>
-                </div><!--.content-->
-                <section class="data-capture-buttons one-buttons">
-                <div class="content">
-                    <input type="submit" value="Submit" onClick="javascript:addToCSVFile()">
-                </div>
-            </section><!--.data-capture-buttons-->
+        <br>
+        Services: <select id="service">
+            <option value="stuff">stuff</option>
+            <option value="webdesign">webdesign</option>
+        </select><br />
+        <span id="webname">Website: <input type="text" /></span><!--.data-capture-buttons-->
+
+        <!--Script for adaptive questions-->
+        <script>
+            document.getElementById("service").onchange = function () {
+            if (document.getElementById("service").options[document.getElementById("service").selectedIndex].value == "webdesign")
+                document.getElementById("webname").style.display = "none";
+            else
+                document.getElementById("webname").style.display = "block";
+        }
+        </script>
 
         <!--code for decision tree-->
         <script>
