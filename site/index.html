@@ -7,9 +7,8 @@
     <title>Choose Your Block Cipher</title>
 </head>
 <body>
-    <h1>
         <!--Create form and save answers to CSV file-->
-        Answer these questions to choose the correct Block Cipher!
+        <h1>Answer these questions to choose the correct Block Cipher!</h1>
         <br>
         How lightweight is your Product?
         <select id="q1">
@@ -36,11 +35,12 @@
         <script>
             // questino 1
             document.getElementById("q1").onchange = function () {
-            if (document.getElementById("q1").options[document.getElementById("q1").selectedIndex].value == "light")
-                // SIMON and Blowfish
+            if (document.getElementById("q1").options[document.getElementById("q1").selectedIndex].value == "light"){
+                // SIMON and Blowfish questions only
                 document.getElementById("q2").style.display = "none";
-            else
-                // AES, DES, Triple DES
+                document.getElementById("q3").style.display = "none";
+            }else
+                // AES, DES, Triple DES questions only
                 document.getElementById("q2").style.display = "block";
             }
 
@@ -55,6 +55,9 @@
             else
                 document.getElementById("q3").style.display = "block";
             }
+
+            // question 3
+
 
         </script>
 
