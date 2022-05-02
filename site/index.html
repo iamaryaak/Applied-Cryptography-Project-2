@@ -10,5 +10,53 @@
     <h1>
         Answer these questions to choose the correct Block Cipher
     </h1>
+</select><!--.data-capture-buttons-->
+<br>
+ <!--question 3-->
+ Does your product use hash function as part of its data structure?
+ <select id="q3">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+    <option value="unsure">Unsure</option>
+</select>
+
+<br>
+ <!--question 4-->
+Is using a standard, well-implemented system important to you?
+<select id="q4">
+    <option value="q4-yes">Yes</option>
+    <option value="q4-no">No</option>
+</select>
+
+<!--Script for adaptive questions-->
+<script>
+    // question 1
+    document.getElementById("q1").onchange = function () {
+    if (document.getElementById("q1").options[document.getElementById("q1").selectedIndex].value == "light"){
+        // SIMON and Blowfish questions only
+    // question 2
+    document.getElementById("q2").onchange = function () {
+    if (document.getElementById("q2").options[document.getElementById("q2").selectedIndex].value == "none")
+        // DES, SIMON,
+        document.getElementById("q3").style.display = "none";
+    if (document.getElementById("q2").options[document.getElementById("q2").selectedIndex].value == "med")
+        // 3DES and AES
+        document.getElementById("q3").style.display = "block";
+    else
+        // Blowfish
+        document.getElementById("q3").style.display = "block";
+    }
+
+    // question 3
+    document.getElementById("q3").onchange = function () {
+    if (document.getElementById("q3").options[document.getElementById("q3").selectedIndex].value == "yes")
+        // Triple DES, AES, Blowfish
+        document.getElementById("q3").style.display = "none";
+    else
+        // IDEA, SIMON, DES
+        document.getElementById("q3").style.display = "block";
+    }
+
+</script>
 </body>
 </html>
