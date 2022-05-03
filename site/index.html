@@ -11,21 +11,55 @@
         Answer these questions to choose the correct Block Cipher
     </h1>
 </select><!--.data-capture-buttons-->
+
+<br>
+ <!--question 1-->
+ 1) Is your product considered as a resource-constrained device? (ex. IoT device such as smart sensors, controllers, activity trackers, smart thermometers, coffee machines, fridges, toys)
+ <select id="q1">
+    <option value="q1-yes">Yes</option>
+    <option value="q2-no">No</option>
+</select>
+
+<br>
+ <!--question 2-->
+ 2) How important is speed to you?
+ <select id="q2">
+    <option value="q2-very">Very</option>
+    <option value="q2-not">Not Important</option>
+</select>
+
 <br>
  <!--question 3-->
- Does your product use hash function as part of its data structure?
+ 3) How lightweight does your product have to be?
  <select id="q3">
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
-    <option value="unsure">Unsure</option>
+    <option value="q3-light">Light - Ex. RFID, IoT</option>
+    <option value="q3-medium">Medium - Ex. Microcontrollers, network protocol (SSH)</option>
+    <option value="q3-heavy">Heavy - Ex. Financial transactions</option>
 </select>
 
 <br>
  <!--question 4-->
-Is using a standard, well-implemented system important to you?
+4) Is using a standard, well-implemented system important to you?
 <select id="q4">
     <option value="q4-yes">Yes</option>
     <option value="q4-no">No</option>
+</select>
+
+<br>
+ <!--question 5-->
+5) How much personal information does your product store?
+<select id="q5">
+    <option value="q5-personal">Personal use</option>
+    <option value="q5-corp">Corporate use</option>
+    <option value="q5-max">Maximum possible security required</option>
+</select>
+
+<br>
+ <!--question 6-->
+6) Does your product use hash function as part of its data structure?
+<select id="q6">
+    <option value="q6-yes">Yes</option>
+    <option value="q6-no">No</option>
 </select>
 
 <!--Script for adaptive questions-->
@@ -34,6 +68,7 @@ Is using a standard, well-implemented system important to you?
     document.getElementById("q1").onchange = function () {
     if (document.getElementById("q1").options[document.getElementById("q1").selectedIndex].value == "light"){
         // SIMON and Blowfish questions only
+
     // question 2
     document.getElementById("q2").onchange = function () {
     if (document.getElementById("q2").options[document.getElementById("q2").selectedIndex].value == "none")
