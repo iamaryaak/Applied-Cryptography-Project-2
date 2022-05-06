@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cryptography</title>
+</head>
+
+<body>
+  <h1>Cryptography Questions</h1>
+  <form action="/questions" method="post">
+
+    <p>1) Is your product considered as a resource-constrained device? (ex. IoT device such as smart sensors, controllers, activity trackers, smart thermometers, coffee machines, fridges, toys)</p>
+    <input type="radio" id="q1-yes" name="resources_constraint" value="q1-yes">
+    <label for="q1-yes">Yes</label><br>
+    <input type="radio" id="q1-no" name="resources_constraint" value="q1-no">
+    <label for="q1-no">No</label><br>
+
+    <p>2) How important is speed to you?</p>
+    <input type="radio" id="q2-very" name="speed" value="q2-very">
+    <label for="q2-very">Very</label><br>
+    <input type="radio" id="q2-no" name="speed" value="q2-no">
+    <label for="q2-no">Not Important</label><br>
+    ​
+    <p>3) How lightweight does your product have to be?</p>
+    <input type="radio" id="q3-light" name="lightweight" value="q3-light">
+    <label for="q3-light">Light - Ex. RFID, IoT</label><br>
+    <input type="radio" id="q3-medium" name="lightweight" value="q3-medium">
+    <label for="q3-medium">Medium - Ex. Microcontrollers, network protocol (SSH)</label><br>
+    <input type="radio" id="q3-heavy" name="lightweight" value="q3-heavy">
+    <label for="q3-heavy">Heavy - Ex. Financial transactions</label><br><br>
+
+    <p>4) Is using a standard, well-implemented system important to you?</p>
+    <input type="radio" id="q4-yes" name="std" value="q4-yes">
+    <label for="q4-yes">Yes</label><br>
+    <input type="radio" id="q4-no" name="std" value="q4-no">
+    <label for="q4-no">No</label><br>
+    ​
+    <p>5) How much personal information does your product store?</p>
+    <input type="radio" id="q5-personal" name="personal_info" value="q5-personal">
+    <label for="q5-personal">Personal use</label><br>
+    <input type="radio" id="q5-corp" name="personal_info" value="q5-corp">
+    <label for="q5-corp">Corporate use</label><br>
+    <input type="radio" id="q5-max" name="personal_info" value="q5-max">
+    <label for="q5-max">Maximum possible security</label><br>
+
+    <p>6) Does your product use hash function as part of its data structure?</p>
+    <input type="radio" id="q6-yes" name="hash" value="q6-yes">
+    <label for="q6-yes">Yes</label><br>
+    <input type="radio" id="q6-no" name="hash" value="q6-no">
+    <label for="q6-no">No</label><br>
+
+    <br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
+</html>
