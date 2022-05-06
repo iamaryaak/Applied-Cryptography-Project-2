@@ -78,11 +78,11 @@ if(isset($_POST["submit"]))
      <div class="form-group">
       <label>3) How lightweight does your product have to be?</label>
       <br>
-      a) light
+      a) light - Ex. RFID, IoT
       <br>
-      b) medium
+      b) medium - Ex. Microcontrollers, network protocol (SSH)
       <br>
-      c) heavy
+      c) heavy - Ex. Financial transactions
       <input type="text" name="q3" placeholder="'a' or 'b' or 'c'" class="form-control" value="<?php echo $q3; ?>" />
      </div>
      <div class="form-group">
@@ -111,10 +111,11 @@ if(isset($_POST["submit"]))
       b) No
       <input type="text" name="q6" placeholder="'a' or 'b'" class="form-control" value="<?php echo $q6; ?>" />
      </div>
+
      <div class="form-group" align="center">
-      <input type="submit" name="submit" class="btn btn-info" value="Submit" />
+      <input id="clickMe" type="submit" name="submit" class="btn btn-info" value="Submit" />
       <br>
-      <a class="btn btn-info" href="modes.php">Next</a>
+      <a class="btn btn-info" href="modes.php" style="margin: 5px">Next</a>
      </div>
     </form>
    </div>

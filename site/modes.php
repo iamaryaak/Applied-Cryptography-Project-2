@@ -58,6 +58,7 @@ if(isset($_POST["submit"]))
      <?php echo $error; ?>
      <div class="form-group">
       <label>What is the purpose of your product?</label>
+      <br>
       a) General Purpose
       <br>
       b) Hardware
@@ -100,7 +101,7 @@ if(isset($_POST["submit"]))
      <div class="form-group" align="center">
       <input type="submit" name="submit" class="btn btn-info" value="Submit" />
       <br>
-      <a class="btn btn-info" href="index.php">Back</a>
+      <a class="btn btn-info" href="index.php" style="margin: 5px">Back</a>
      </div>
     </form>
    </div>
